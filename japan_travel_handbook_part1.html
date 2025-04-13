@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Travel Handbook</title>
+    <style>
+        :root {
+            --primary: #e60012;
+            --secondary: #f8f8f8;
+            --accent: #3b5998;
+            --text: #333;
+            --light-text: #666;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid var(--primary);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
+        h3 {
+            color: var(--accent);
+            margin-top: 25px;
+        }
+        
+        .date-range {
+            font-size: 1.2rem;
+            color: var(--light-text);
+            font-weight: normal;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .map-container {
+            margin: 20px 0;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .attraction-card {
+            background: var(--secondary);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .attraction-card h3 {
+            margin-top: 0;
+        }
+        
+        .phrase-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .phrase-card {
+            background: var(--secondary);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .japanese {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .tip-card {
+            background: var(--secondary);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .tip-card h3 {
+            margin-top: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .phrase-list, .tips-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Japan Travel Handbook <span class="date-range">April 15-23, 2024</span></h1>
+        <p>Your essential guide to exploring Tokyo, Kamakura, Kyoto, Nara, and Osaka</p>
+    </header>
+    
+    <div class="section" id="maps">
+        <h2>City Maps</h2>
+        
+        <h3>Tokyo</h3>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207446.2482179556!2d139.60078195!3d35.66844145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x605d1b87f02e57e7%3A0x2e01618b22571b89!2sTokyo%2C%20Japan!5e0!3m2!1sen!2sus!4v1712345678901!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+        <h3>Kamakura</h3>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51862.15221266532!2d139.5063705!3d35.3192065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018456aeab0f0a5%3A0x4de155903f849205!2sKamakura%2C%20Kanagawa%2C%20Japan!5e0!3m2!1sen!2sus!4v1712345678901!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+        <h3>Kyoto</h3>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104994.9853908396!2d135.7020065!3d35.0116365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6001a8d6cd3cc3f1%3A0xc0961d366bbb1d3d!2sKyoto%2C%20Japan!5e0!3m2!1sen!2sus!4v1712345678901!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+        <h3>Nara</h3>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104328.02980417929!2d135.8164065!3d34.6850865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600138a1d9a1a0a1%3A0x5f1a4b6c3d4f6b1a!2sNara%2C%20Japan!5e0!3m2!1sen!2sus!4v1712345678901!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        
+        <h3>Osaka</h3>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104409.83755706678!2d135.4387285!3d34.6937375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6553406e2e1%3A0xc55bc16ee46a2fe7!2sOsaka%2C%20Japan!5e0!3m2!1sen!2sus!4v1712345678901!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    
+    <div class="section" id="attractions">
+        <h2>Top Attractions</h2>
+        
+        <div class="attraction-card">
+            <h3>Senso-ji Temple (Tokyo)</h3>
+            <p>Tokyo's most famous Buddhist temple, founded in 628 AD. The vibrant Kaminarimon (Thunder Gate) with its giant lantern marks the entrance to Nakamise shopping street leading to the main hall. Don't miss the fortune-telling omikuji papers.</p>
+            <p><strong>Best time to visit:</strong> Early morning to avoid crowds</p>
+        </div>
+        
+        <div class="attraction-card">
+            <h3>Meiji Shrine (Tokyo)</h3>
+            <p>A serene Shinto shrine dedicated to Emperor Meiji and Empress Shoken, nestled in a forested area near Harajuku. The towering torii gates and sake barrels make for beautiful photos. Witness traditional Shinto weddings on weekends.</p>
+            <p><strong>Tip:</strong> Try writing your wish on an ema (wooden plaque) to hang at the shrine.</p>
+        </div>
+        
+        <div class="attraction-card">
+            <h3>Fushimi Inari Shrine (Kyoto)</h3>
+            <p>Famous for its thousands of vermilion torii gates that form tunnels up the sacred Mount Inari. The hike to the summit takes about 2-3 hours round trip, with smaller shrines and viewpoints along the way.</p>
+            <p><strong>Photography tip:</strong> The gates are most photogenic early morning or late afternoon.</p>
+        </div>
+        
+        <div class="attraction-card">
+            <h3>Todai-ji Temple (Nara)</h3>
+            <p>Home to the world's largest bronze Buddha statue (Daibutsu) housed in the massive Daibutsuden hall. The temple complex is part of Nara Park where friendly deer roam freely. Don't miss the pillar with a hole said to grant enlightenment to those who squeeze through.</p>
+            <p><strong>Deer warning:</strong> They bow for senbei (deer crackers) but may nibble clothes!</p>
+        </div>
+        
+        <div class="attraction-card">
+            <h3>Osaka Castle</h3>
+            <p>One of Japan's most famous landmarks, this reconstructed castle features a museum inside and offers panoramic views from the top floor. The surrounding Nishinomaru Garden is especially beautiful during cherry blossom season.</p>
+            <p><strong>History note:</strong> The original castle played a major role in unifying Japan in the 16th century.</p>
+        </div>
+    </div>
+    
+    <div class="section" id="cultural">
+        <h2>Cultural Experiences</h2>
+        
+        <div class="attraction-card">
+            <h3>Tea Ceremony</h3>
+            <p>The Japanese tea ceremony (chanoyu or sado) is a choreographed ritual of preparing and serving matcha (powdered green tea). It embodies harmony, respect, purity, and tranquility. Many tea houses in Kyoto offer short introductory sessions for visitors.</p>
+            <p><strong>Etiquette:</strong> Bow when receiving tea, turn the bowl to avoid drinking from the front, and compliment the host.</p>
+        </div>
+        
+        <div class="attraction-card">
+            <h3>Kendo (Japanese Swordsmanship)</h3>
+            <p>Experience this modern martial art derived from traditional samurai swordsmanship. Participants wear protective armor (bogu) and use bamboo swords (shinai). Some dojos offer introductory lessons where you can learn basic stances and strikes.</p>
+            <p><strong>Where to try:</strong> Look for cultural centers in Tokyo or Kyoto offering short workshops.</p>
+        </div>
+        
+        <div class="attraction-card">
+            <h3>Zen Meditation</h3>
+            <p>Many temples offer zazen (seated meditation) sessions for visitors. Typically involves sitting cross-legged while focusing on breathing, sometimes followed by walking meditation (kinhin). Kyoto's Daitoku-ji and Tokyo's Soji-ji are good options.</p>
+            <p><strong>What to expect:</strong> Sessions usually last 30-60 minutes with instruction in English.</p>
+        </div>
+    </div>

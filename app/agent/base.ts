@@ -49,6 +49,8 @@ export abstract class BaseAgent {
     this.lastToolCallId = null;
   }
 
+  // duplicate_threshold 缺失，缺少了stuck情况的处理
+
   /** Add a message to the agent's memory (conversation history) */
   updateMemory(role: ChatMessage["role"], content: string, name?: string) {
     const msg: ChatMessage = { role, content };

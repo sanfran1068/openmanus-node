@@ -1,4 +1,4 @@
-import { BaseAgent, AgentState } from "./base";
+import { AgentState } from "./base";
 import { ReActAgent } from "./react";
 import { ChatMessage, LLM } from "../llm";
 import { ToolCollection, ToolError } from "../tool/base";
