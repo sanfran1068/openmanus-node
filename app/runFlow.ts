@@ -1,7 +1,13 @@
-import { PlanningFlow } from './flow/planning';
+import { Manus } from './agent/manus';
+import { FlowFactory, FlowType } from './flow/flow_factory';
 import logger from './logger';
+import { BaseAgent } from './agent/base';
 
 async function runFlow(): Promise<void> {
+    const agents = new Map<string, BaseAgent>([
+        ['manus', new Manus()]
+    ]);
+
     try {
         const prompt = await new Promise<string>((resolve) => {
             process.stdout.write('Enter your prompt: ');
@@ -15,7 +21,10 @@ async function runFlow(): Promise<void> {
             return;
         }
 
-        const flow = new PlanningFlow();
+        const flow = FlowFactory.createFlow(
+            FlowType.PLANNING,
+            agents
+        );
         logger.warn('Processing your request...');
 
         try {

@@ -64,8 +64,8 @@ export class MCPServer {
         const requiredParams = toolFunction.parameters?.required || [];
         const parameterSchema = Object.entries(paramProps).reduce((acc, [paramName, paramDetails]) => {
             acc[paramName] = {
-                description: paramDetails.description || '',
-                type: paramDetails.type || 'any',
+                description: (paramDetails as any).description || '',
+                type: (paramDetails as any).type || 'any',
                 required: requiredParams.includes(paramName)
             };
             return acc;
@@ -74,6 +74,7 @@ export class MCPServer {
         Object.defineProperty(toolMethod, '_parameter_schema', { value: parameterSchema });
 
         // Register with server
+        // @ts-ignore
         this.server.tool(toolName, parameterSchema, toolMethod);
         logger.info(`Registered tool: ${toolName}`);
     }
@@ -99,7 +100,7 @@ export class MCPServer {
 
     public async cleanup(): Promise<void> {
         try {
-            await this.server.stop();
+            await this.server.close();
         } catch (error) {
             logger.error(`Error during cleanup: ${error instanceof Error ? error.message : 'Unknown error'}`);
         }

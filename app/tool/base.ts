@@ -26,7 +26,7 @@ export abstract class BaseTool {
   abstract execute(args: any): Promise<string>;
 
   /** Convert tool to OpenAI API function spec (with strict schema enforcement) */
-  toParam(): object {
+  toParam(): {type: string, function: any} {
     // Ensure no extra params allowed and strict mode on
     const paramsSchema = { ...this.parameters, additionalProperties: false };
     return {

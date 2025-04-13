@@ -9,7 +9,7 @@ async function main() {
 
         // Create and run server
         const server = new MCPServer();
-        await server.run(transport);
+        await server.run();
     } catch (error) {
         logger.error(`Failed to start MCP server: ${error instanceof Error ? error.message : 'Unknown error'}`);
         process.exit(1);
