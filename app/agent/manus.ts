@@ -1,9 +1,9 @@
-// import { PlanningAgent } from "./planning";
+import { PlanningAgent } from "./planning";
 import { ToolCallAgent } from "./toolcall";
 import { ToolCollection } from "../tool/base";
 import { PythonExecute } from "../tool/python_execute";
 import { Bash } from "../tool/bash";
-//import { GoogleSearch } from "../tool/google_search";
+import { GoogleSearch } from "../tool/google_search";
 import { DuckDuckGoSearch } from "../tool/duckduckgo_search";
 import { BrowserUseTool } from "../tool/browser_use_tool";
 import { FileSaver } from "../tool/file_saver";
@@ -25,20 +25,20 @@ export class Manus extends ToolCallAgent {
       description: "A versatile agent that can solve various tasks using multiple tools",
       system_prompt: Manus.SYSTEM_PROMPT,
       next_step_prompt: Manus.NEXT_STEP_PROMPT,
-      max_steps: options.max_steps ?? 30
+      max_steps: options.max_steps ?? 20
     });
     // Define a comprehensive set of tools for Manus
     this["available_tools"] = new ToolCollection(
       new PythonExecute(),
       new Bash(),
-      // new GoogleSearch(),
+      new GoogleSearch(),
       new BrowserUseTool(),
       new FileSaver(),
       new StrReplaceEditor(),
       new PlanningTool(),
       new CreateChatCompletion(),
       new Terminate(),
-      new DuckDuckGoSearch()
+      new DuckDuckGoSearch(),
     );
   }
 }

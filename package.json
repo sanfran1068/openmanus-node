@@ -43,7 +43,7 @@
     "node-fetch": "^3.3.2",
     "node-global-proxy": "^1.0.1",
     "openai": "4.87.3",
-    "playwright": "^1.51.0",
+    "playwright": "^1.51.1",
     "toml": "^3.0.0",
     "winston": "^3.17.0"
   },
