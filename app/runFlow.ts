@@ -56,9 +56,7 @@ process.on('SIGINT', () => {
 });
 
 // Run the flow
-if (require.main === module) {
-    runFlow().catch((error) => {
-        logger.error(`Fatal error: ${error instanceof Error ? error.message : 'Unknown error'}`);
-        process.exit(1);
-    });
-} 
+runFlow().catch((error) => {
+    logger.error(`Fatal error: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    process.exit(1);
+});

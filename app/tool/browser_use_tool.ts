@@ -1,5 +1,5 @@
 import { BaseTool, ToolError } from "./base";
-import { chromium, Browser, Page } from "playwright";
+import { Browser, Page } from 'playwright';
 
 /** Interact with a headless browser: navigate, click elements, input text, and extract content. */
 export class BrowserUseTool extends BaseTool {
@@ -30,6 +30,7 @@ export class BrowserUseTool extends BaseTool {
 
   private async ensureBrowser(): Promise<Page> {
     if (!BrowserUseTool.browser) {
+      const { chromium } = await import('playwright');
       BrowserUseTool.browser = await chromium.launch({ headless: false });
       const context = await BrowserUseTool.browser.newContext();
       BrowserUseTool.page = await context.newPage();
