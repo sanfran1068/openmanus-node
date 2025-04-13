@@ -1,0 +1,57 @@
+{
+  "name": "openmanus-node",
+  "version": "1.0.0",
+  "description": "A Node.js and TypeScript recreation of the OpenManus project, providing a general-purpose AI agent platform capable of performing complex, multi-step tasks autonomously.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node --experimental-specifier-resolution=node dist/main.js",
+    "start:api": "node --experimental-specifier-resolution=node dist/server.js",
+    "dev": "tsx app/main.ts",
+    "dev:api": "tsx app/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ai",
+    "agent",
+    "llm",
+    "autonomous",
+    "typescript",
+    "nodejs",
+    "openmanus",
+    "web-browsing",
+    "code-execution"
+  ],
+  "author": "rxyshww",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rxyshww/OpenManus-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rxyshww/OpenManus-node/issues"
+  },
+  "homepage": "https://github.com/rxyshww/OpenManus-node#readme",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "dotenv": "^16.0.3",
+    "duck-duck-scrape": "^2.2.7",
+    "express": "^4.18.2",
+    "google-it": "^1.6.4",
+    "googlethis": "^1.8.0",
+    "node-fetch": "^3.3.2",
+    "node-global-proxy": "^1.0.1",
+    "openai": "4.87.3",
+    "playwright": "^1.51.0",
+    "toml": "^3.0.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.1",
+    "tsx": "^4.7.1",
+    "typescript": "^5.0.0"
+  }
+}
