@@ -1,6 +1,7 @@
 import { BaseFlow } from "./base";
 import { Manus } from "../agent/manus";
 import { PlanningTool } from "../tool/planning";
+import { AgentState } from "../agent/base";
 
 /** PlanningFlow: orchestrates planning and executing a task in multiple steps */
 export class PlanningFlow extends BaseFlow {
@@ -43,7 +44,7 @@ export class PlanningFlow extends BaseFlow {
       // Mark step as completed (with note as lastResult summary if needed)
       this.planningTool.markStepCompleted(planId, currentIndex, (lastResult && lastResult.length < 100) ? lastResult : undefined);
       // If agent terminated early, break out
-      if (this.agent.state === "FINISHED" || this.agent.state === "FINISHED") {
+      if (this.agent.state === AgentState.FINISHED) {
         break;
       }
     }

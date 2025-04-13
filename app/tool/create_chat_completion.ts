@@ -23,9 +23,9 @@ export class CreateChatCompletion extends BaseTool {
     const llm = LLM.getInstance();
     const messages = [];
     if (system_prompt) {
-      messages.push({ role: "system", content: system_prompt });
+      messages.push({ role: "system" as const, content: system_prompt });
     }
-    messages.push({ role: "user", content: prompt });
+    messages.push({ role: "user" as const, content: prompt });
     try {
       const result = await llm.ask(messages);
       return result;
